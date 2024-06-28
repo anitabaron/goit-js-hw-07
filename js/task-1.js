@@ -1,9 +1,8 @@
-// const items = document.querySelectorAll("li.item").length;
-// console.log(`Number of categories:`, items);
-// items();
-// .forEach
-// const itemName = document.querySelector(".item h2");
-// console.log(`Category:`, itemName.textContent);
-// const itemsElem = items.child("li");
-// console.log(itemsElem);
-// console.log(`Elements:`, itemElem);
+const allItems = document.querySelectorAll("#categories .item");
+console.log(`Number of categories:`, allItems.length);
+allItems.forEach((category) => {
+  const itemName = category.querySelector("h2").textContent;
+  const smallListOne = category.querySelectorAll("li").length;
+  console.log(`Category:`, itemName);
+  console.log(`Elements:`, smallListOne);
+});

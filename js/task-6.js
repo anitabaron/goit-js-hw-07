@@ -5,8 +5,10 @@ function getRandomHexColor() {
 }
 
 const btnCreate = document.querySelector("#controls > button:nth-child(2)"); //create
-const btnCreate2 = document.querySelector('button[data-create]'); //create
+btnCreate.addEventListener
+// const btnCreate2 = document.querySelector('button[data-create]'); //create
 const btnDestroy = document.querySelector("#controls > button:nth-child(3)"); //destroy
+btnDestroy.addEventListener
 const btnCreate2 = document.querySelector('button[data-destroy]'); //destroy
 
 createBoxes(amount){
@@ -22,3 +24,10 @@ createBoxes(amount){
 // destroyBoxes(event) {
 
 // }
+
+
+Do nasłuchiwacza zdarzeń należy przekazać poszczególne wywołania zwrotne,
+  poprawnie nazwane za pomocą 
+on lub handle,
+  a następnie wywołać w nich odpowiednio funkcje 
+  createBoxes i destroyBoxes

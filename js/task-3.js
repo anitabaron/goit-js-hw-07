@@ -1,6 +1,11 @@
-const formField = document.querySelector("input#name-input");
-formField.addEventListener("input", writeAndErase);
+const inputField = document.querySelector("input#name-input");
+const outputField = document.querySelector("span#name-output");
+
+inputField.addEventListener("input", writeAndErase);
+
 function writeAndErase(event) {
-  // formField.trim();
-  console.log("Input: ", event.target.elements.input.value);
+  const formValue = event.currentTarget.value.trim();
+  if (formValue !== "") {
+    outputField.textContent = formValue;
+  }
 }

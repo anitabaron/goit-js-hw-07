@@ -26,8 +26,11 @@ const images = [
 ];
 
 const allList = document.querySelector("ul.gallery");
-console.log(allList);
-const galleryImage = document.createElement("li");
-console.log(galleryImage);
-galleryImages.textContent = "gg";
-document.body.append(galleryImages);
+for (const image of images) {
+  const galleryList = document.createElement("li");
+  const galleryImage = document.createElement("img");
+  galleryList.appendChild(galleryImage);
+  galleryImage.src = image.url;
+  galleryImage.alt = image.alt;
+  allList.append(galleryImage);
+}
