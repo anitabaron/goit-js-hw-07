@@ -4,30 +4,41 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 
-const btnCreate = document.querySelector("#controls > button:nth-child(2)"); //create
-btnCreate.addEventListener
-// const btnCreate2 = document.querySelector('button[data-create]'); //create
-const btnDestroy = document.querySelector("#controls > button:nth-child(3)"); //destroy
-btnDestroy.addEventListener
-const btnCreate2 = document.querySelector('button[data-destroy]'); //destroy
-
-createBoxes(amount){
-  if (amount>=1 && amount <=100) {
-  div#boxes
+const btnCreate = document.querySelector("button[data-create]"); //create
+btnCreate.addEventListener("click", () => {
+  const amount = parseInt(document.querySelector("input").value);
+  const inputField = document.querySelector("input");
+  if (amount >= 1 && amount <= 100) {
+    createBoxes(amount);
   }
-  const box = document.createElement("div#boxes")
-  document.body.append(box);
-// input.reset();
+  inputField.value = "";
+});
+
+btnCreate.addEventListener("click", () => {
+  let keypressCounter = 0;
+  if ("click") {
+    keypressCounter += 1;
+    console.log(keypressCounter);
+  }
+  return keypressCounter;
+});
+
+const btnDestroy = document.querySelector("button[data-destroy]"); //destroy
+btnDestroy.addEventListener("click", destroyBoxes);
+
+const boxes = document.querySelector("div#boxes");
+
+function createBoxes(amount) {
+  console.log(amount);
+  for (let i = 1; i <= amount; i++) {
+    const size = "30px";
+    const box = document.createElement("div");
+    box.style.width = size;
+    box.style.height = size;
+    const colorHex = getRandomHexColor();
+    box.style.backgroundColor = colorHex;
+    document.body.after(box);
+  }
 }
 
-
-// destroyBoxes(event) {
-
-// }
-
-
-Do nasłuchiwacza zdarzeń należy przekazać poszczególne wywołania zwrotne,
-  poprawnie nazwane za pomocą 
-on lub handle,
-  a następnie wywołać w nich odpowiednio funkcje 
-  createBoxes i destroyBoxes
+function destroyBoxes() {}
