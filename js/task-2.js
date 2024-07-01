@@ -25,12 +25,16 @@ const images = [
   },
 ];
 
-const allList = document.querySelector("ul.gallery");
-for (const image of images) {
+const element = document.querySelector("ul.gallery");
+const fragment = document.createDocumentFragment();
+
+images.forEach((image) => {
   const galleryList = document.createElement("li");
   const galleryImage = document.createElement("img");
   galleryList.appendChild(galleryImage);
   galleryImage.src = image.url;
   galleryImage.alt = image.alt;
-  allList.append(galleryImage);
-}
+  fragment.appendChild(galleryList);
+});
+
+element.appendChild(fragment);
